@@ -12,7 +12,7 @@ class BooksController < BlocWorks::Controller
   end
 
   def index
-    render :welcome, book: "index"
+    render :index, books: Book.all
   end
 
   def update
