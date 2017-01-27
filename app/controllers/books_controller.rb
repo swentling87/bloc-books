@@ -10,8 +10,8 @@ require 'pry'
   end
 
   def show
-    binding.pry
-    render :show, book: Book.find_one(1)
+    book = Book.find(params['id'])
+    render :show, book: book
   end
 
   def index
