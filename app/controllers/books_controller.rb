@@ -2,7 +2,7 @@ class BooksController < BlocWorks::Controller
 require 'pry'
 
   def welcome
-    render :welcome, book: "Eloquent Ruby"
+    @book = "Eloquent Ruby"
   end
 
   def create
@@ -10,12 +10,11 @@ require 'pry'
   end
 
   def show
-    book = Book.find(params['id'])
-    render :show, book: book
+    @book = Book.find(params['id'])
   end
 
   def index
-    render :index, books: Book.all
+    @books = Book.all
   end
 
   def update
